@@ -44,6 +44,7 @@ public:
   float scaleFactor() const override;
   void onChanged() override {}
   void setIME(ImGuiPlatformImeData *) override {}
+  Accessibility *accessibility() const override { return nullptr; }
 
 private:
   HWND m_hwnd;

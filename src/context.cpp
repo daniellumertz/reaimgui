@@ -117,6 +117,8 @@ Context::Context(const char *label, const int userConfigFlags)
   io.LogFilename = logFn.c_str();
   io.UserData = this;
 
+  m_imgui->TestEngineHookItems = Settings::Accessibility;
+
   setUserConfigFlags(userConfigFlags);
   if(Settings::DockingEnable)
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -594,4 +596,9 @@ void Context::enableViewports(const bool enable)
     Viewport *instance { static_cast<Viewport *>(viewport->PlatformUserData) };
     EnableWindow(instance->nativeHandle(), enable);
   }
+}
+
+bool Context::accessibilityEnabled() const
+{
+  return m_imgui->TestEngineHookItems;
 }

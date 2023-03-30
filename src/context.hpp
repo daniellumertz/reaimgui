@@ -74,6 +74,7 @@ public:
   void endDrag(bool drop);
   void updateFocus();
   void enableViewports(bool enable);
+  bool accessibilityEnabled() const;
 
   ImGuiIO &IO();
   DockerList &dockers() { return *m_dockers; }

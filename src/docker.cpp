@@ -491,3 +491,8 @@ void DockerHost::setIME(ImGuiPlatformImeData *data)
   if(m_window)
     m_window->setIME(data);
 }
+
+Accessibility *DockerHost::accessibility() const
+{
+  return m_window ? m_window->accessibility() : nullptr;
+}
