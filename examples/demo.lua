@@ -721,11 +721,11 @@ function demo.ShowDemoWindowWidgets()
 
     do
       -- Tooltips
-      -- ImGui.AlignTextToFramePadding(ctx)
+      ImGui.AlignTextToFramePadding(ctx)
       ImGui.Text(ctx, 'Tooltips:')
 
       ImGui.SameLine(ctx)
-      ImGui.Button(ctx, 'Button')
+      ImGui.Button(ctx, 'Button##2')
       if ImGui.IsItemHovered(ctx) then
         ImGui.SetTooltip(ctx, 'I am a tooltip')
       end
